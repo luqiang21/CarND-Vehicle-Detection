@@ -18,8 +18,8 @@ The goals / steps of this project are the following:
 [image1]: ./output_images/car_not_car.png
 [image2]: ./output_images/HOG_example.png
 [image4]: ./output_images/sliding_window.PNG
-[image5]: ./output_images/bboxesHeatmap.png
-[image6]: ./output_images/bboxesHeatmapThreshold.png
+[image5]: ./output_images/bboxesHeatmap.PNG
+[image6]: ./output_images/bboxesHeatmapThreshold.PNG
 [image7]: ./output_images/output_bboxes.png
 [video1]: ./project_video.mp4
 

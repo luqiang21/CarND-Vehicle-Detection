@@ -16,7 +16,7 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 [image1]: ./output_images/car_not_car.png
-[image2]: ./output_images/HOG_example.png
+[image2]: ./output_images/HOG_example.PNG
 [image4]: ./output_images/sliding_window.PNG
 [image5]: ./output_images/bboxesHeatmap.PNG
 [image6]: ./output_images/bboxesHeatmapThreshold.PNG
