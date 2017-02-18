@@ -8,7 +8,7 @@
 The goals / steps of this project are the following:
 
 * Perform a Histogram of Oriented Gradients (HOG) feature extraction on a labeled training set of images and train a classifier Linear SVM classifier
-* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector. 
+* Optionally, you can also apply a color transform and append binned color features, as well as histograms of color, to your HOG feature vector.
 * Note: for those first two steps don't forget to normalize your features and randomize a selection for training and testing.
 * Implement a sliding-window technique and use your trained classifier to search for vehicles in images.
 * Run your pipeline on a video stream (start with the test_video.mp4 and later implement on full project_video.mp4) and create a heat map of recurring detections frame by frame to reject outliers and follow detected vehicles.
@@ -37,7 +37,7 @@ You're reading it!
 
 ####1. Explain how (and identify where in your code) you extracted HOG features from the training images.
 
-The code for this step is contained in the first code cell of the IPython notebook (or in lines # through # of the file called `some_file.py`).  
+The code for this step is contained in the first code cell of the IPython notebook.
 
 I started by reading in all the `vehicle` and `non-vehicle` images.  Here is an example of one of each of the `vehicle` and `non-vehicle` classes:
 
@@ -62,7 +62,7 @@ I trained a linear SVM using all 3 channells of HOG features, spatial features a
 
 ####1. Describe how (and identify where in your code) you implemented a sliding window search.  How did you decide what scales to search and how much to overlap windows?
 
-Instead of recompute hog every time, I took the hog features of the entire image once, and then subsampling the array to extract features for each window. Also, scale the entire image, then I can keep the size of the feature window. This is another way to apply different window sizes to check cars.
+Instead of recomputing hog every time, I took the hog features of the entire image once, and then subsampling the array to extract features for each window. This is a way to increase the speed of the program as is introduced in the lectures. Also, scale the entire image, then I can keep the size of the feature window. This is another way to apply different window sizes to check cars. I didn't use the lecture's technique which is checking various sizes of windows, because it is difficult to determine how many sizes should be checked. And it takes long time for many sizes.
 
 
 
@@ -104,3 +104,5 @@ I recorded all the positions of positive detections in each frame of the video. 
 ####1. Briefly discuss any problems / issues you faced in your implementation of this project.  Where will your pipeline likely fail?  What could you do to make it more robust?
 
 The pipeline still has some false positive cases in the video. Since I am not very familiar with python class, so it is hard for me to implement a class and average the heatmap over several images. A vehicle class will make the pipeline more robust.
+
+And also, different conditions of the road images like brightness, curvature and so on will include noise on the detection of vehicles. Rain or snow will bring greater difficulty for the detection of vehicles, since snow may cover some parts of a vehicle, there is no such data trained in the model. To solve this, similar images could be taken under rain/snow conditions to train the model to have a better prediction. Curved roads on mountainy cities also may fail my pipeline because the road is not a plane any more, then the content of the image will have more noises. 
