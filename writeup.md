@@ -76,7 +76,7 @@ Ultimately I searched on two scales using YCrCb 3-channel HOG features plus spat
 ### Video Implementation
 
 ####1. Provide a link to your final video output.  Your pipeline should perform reasonably well on the entire project video (somewhat wobbly or unstable bounding boxes are ok as long as you are identifying the vehicles most of the time with minimal false positives.)
-Here's a [link to my video result](./project_video.mp4)
+Here's a [link to my video result](./project.mp4)
 
 
 ####2. Describe how (and identify where in your code) you implemented some kind of filter for false positives and some method for combining overlapping bounding boxes.
@@ -105,4 +105,4 @@ I recorded all the positions of positive detections in each frame of the video. 
 
 The pipeline still has some false positive cases in the video. Since I am not very familiar with python class, so it is hard for me to implement a class and average the heatmap over several images. A vehicle class will make the pipeline more robust.
 
-And also, different conditions of the road images like brightness, curvature and so on will include noise on the detection of vehicles. Rain or snow will bring greater difficulty for the detection of vehicles, since snow may cover some parts of a vehicle, there is no such data trained in the model. To solve this, similar images could be taken under rain/snow conditions to train the model to have a better prediction. Curved roads on mountainy cities also may fail my pipeline because the road is not a plane any more, then the content of the image will have more noises. 
+And also, different conditions of the road images like brightness, curvature and so on will include noise on the detection of vehicles. Rain or snow will bring greater difficulty for the detection of vehicles, since snow may cover some parts of a vehicle, there is no such data trained in the model. To solve this, similar images could be taken under rain/snow conditions to train the model to have a better prediction. Curved roads on mountainy cities also may fail my pipeline because the road is not a plane any more, then the content of the image will have more noises.
